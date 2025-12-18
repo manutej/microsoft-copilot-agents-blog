@@ -1,3 +1,21 @@
+---
+title: "Security, Compliance, and Governance"
+subtitle: "Deploy Agents Safely in Your Enterprise"
+readingTime: 22
+handsOnTime: 105
+difficulty: Advanced
+prerequisites:
+  - "Completed Blogs 1-7"
+  - "Agent tested and ready for production"
+learningObjectives:
+  - "Configure Azure AD authentication for enterprise security"
+  - "Implement role-based access control (RBAC)"
+  - "Apply Data Loss Prevention (DLP) policies"
+  - "Achieve GDPR, HIPAA, and SOC 2 compliance"
+  - "Enable comprehensive audit logging"
+lastUpdated: "2024-12-18"
+---
+
 # Blog 8: Security, Compliance, and Governance
 ## Deploy Agents Safely in Your Enterprise
 

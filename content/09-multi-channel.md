@@ -1,3 +1,21 @@
+---
+title: "Deploying to Multiple Channels"
+subtitle: "Reach Users Where They Work: Teams, Web, Mobile"
+readingTime: 19
+handsOnTime: 65
+difficulty: Intermediate
+prerequisites:
+  - "Completed Blogs 1-8"
+  - "Secure agent ready for production"
+learningObjectives:
+  - "Deploy agent to Microsoft Teams for internal employees"
+  - "Embed agent on website for customers"
+  - "Enable mobile access via Power Apps Mobile"
+  - "Optimize user experience for each channel"
+  - "Configure channel-specific access controls"
+lastUpdated: "2024-12-18"
+---
+
 # Blog 9: Deploying to Multiple Channels
 ## "Reach Users Where They Work: Teams, Web, Mobile"
 
