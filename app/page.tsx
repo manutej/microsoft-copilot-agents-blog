@@ -74,9 +74,11 @@ export default function HomePage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="inline-block bg-gradient-to-r from-copilot-blue-700 to-copilot-blue-500 text-white px-6 py-2 rounded-lg mb-4">
-              <h2 className="text-2xl font-bold">Arc 1: Foundation</h2>
-            </div>
+            <a href="/blog/01-intro-copilot-agents" className="inline-block">
+              <div className="inline-block bg-gradient-to-r from-copilot-blue-700 to-copilot-blue-500 text-white px-6 py-2 rounded-lg mb-4 hover:shadow-lg transition-shadow cursor-pointer">
+                <h2 className="text-2xl font-bold">Arc 1: Foundation</h2>
+              </div>
+            </a>
             <p className="text-lg text-copilot-gray-600 dark:text-copilot-gray-400 max-w-3xl">
               Master the fundamentals of Microsoft Copilot Agents. Build your first FAQ agent and conversational assistant.
             </p>
@@ -93,9 +95,11 @@ export default function HomePage() {
       <section className="bg-copilot-gray-50 dark:bg-copilot-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-lg mb-4">
-              <h2 className="text-2xl font-bold">Arc 2: Integration</h2>
-            </div>
+            <a href="/blog/04-agent-flows-automation" className="inline-block">
+              <div className="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-lg mb-4 hover:shadow-lg transition-shadow cursor-pointer">
+                <h2 className="text-2xl font-bold">Arc 2: Integration</h2>
+              </div>
+            </a>
             <p className="text-lg text-copilot-gray-600 dark:text-copilot-gray-400 max-w-3xl">
               Connect agents to your business systems. Learn Power Automate flows, multi-channel deployment, and knowledge integration.
             </p>
@@ -112,9 +116,11 @@ export default function HomePage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-2 rounded-lg mb-4">
-              <h2 className="text-2xl font-bold">Arc 3: Enterprise</h2>
-            </div>
+            <a href="/blog/07-security-governance" className="inline-block">
+              <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-2 rounded-lg mb-4 hover:shadow-lg transition-shadow cursor-pointer">
+                <h2 className="text-2xl font-bold">Arc 3: Enterprise</h2>
+              </div>
+            </a>
             <p className="text-lg text-copilot-gray-600 dark:text-copilot-gray-400 max-w-3xl">
               Deploy agents at scale with enterprise security, governance, and compliance. Multi-channel strategies and security best practices.
             </p>
@@ -131,9 +137,11 @@ export default function HomePage() {
       <section className="bg-copilot-gray-50 dark:bg-copilot-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="inline-block bg-gradient-to-r from-red-600 to-orange-500 text-white px-6 py-2 rounded-lg mb-4">
-              <h2 className="text-2xl font-bold">Arc 4: Advanced</h2>
-            </div>
+            <a href="/blog/10-advanced-automation" className="inline-block">
+              <div className="inline-block bg-gradient-to-r from-red-600 to-orange-500 text-white px-6 py-2 rounded-lg mb-4 hover:shadow-lg transition-shadow cursor-pointer">
+                <h2 className="text-2xl font-bold">Arc 4: Advanced</h2>
+              </div>
+            </a>
             <p className="text-lg text-copilot-gray-600 dark:text-copilot-gray-400 max-w-3xl">
               Master advanced automation, measure ROI, and scale organization-wide adoption. Become a Copilot Agents expert.
             </p>
