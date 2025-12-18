@@ -28,7 +28,7 @@ Picture this: Your HR team spends 10 hours every week answering the same employe
 
 By the end of this guide, you'll build your first AI agent—a smart assistant that works 24/7, never gets tired, and can handle hundreds of conversations simultaneously. Best of all, you won't write a single line of code.
 
-![Diagram: Before/After Agent Implementation](images/01-diagram-before-after.png)
+![Diagram: Before/After Agent Implementation](/images/01-copilot-studio-interface.png)
 *Before: HR team buried in repetitive emails. After: AI agent handles 60% of questions instantly.*
 
 ---
@@ -69,7 +69,7 @@ Remember email auto-responders? They could only send the same canned message to 
 
 **Real-World Example**: A traditional chatbot might only respond to "PTO policy." An AI agent understands "vacation days", "time off", "how much PTO do I get?", and "can I take leave next month?" as the same question.
 
-![Diagram: AI Agent vs Traditional Chatbot Comparison](images/01-diagram-ai-agent-comparison.png)
+![Diagram: AI Agent vs Traditional Chatbot Comparison](/images/01-ai-agent-vs-chatbot.png)
 
 **Source**: [Microsoft Copilot Studio Fundamentals](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)
 *Last accessed: December 18, 2024*
@@ -124,7 +124,7 @@ The agent can *do real work*, not just answer questions.
 **Source**: [Use Connectors in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-connectors)
 *Last accessed: December 18, 2024*
 
-![Diagram: How Agents Process Conversations](images/01-diagram-conversation-flow.png)
+<!-- ![Diagram: How Agents Process Conversations](images/01-diagram-conversation-flow.png) -->
 
 ---
 
@@ -219,12 +219,12 @@ Microsoft Copilot Studio is your **no-code agent builder**. It's part of the lar
    - Mobile apps (field workers)
    - Facebook, SMS, and more
 
-![Diagram: Microsoft Copilot Studio Ecosystem](images/01-diagram-ecosystem.png)
+<!-- ![Diagram: Microsoft Copilot Studio Ecosystem](images/01-diagram-ecosystem.png) -->
 
 **Source**: [Copilot Studio Capabilities Overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio#copilot-studio-capabilities)
 *Last accessed: December 18, 2024*
 
-![Screenshot: Copilot Studio Homepage](images/01-copilotstudio-homepage.png)
+<!-- ![Screenshot: Copilot Studio Homepage](images/01-copilotstudio-homepage.png) -->
 *The Copilot Studio homepage showing main navigation: Agents, Topics, Knowledge, and Analytics.*
 
 ---
@@ -246,7 +246,7 @@ Before we dive into building, let's establish a common vocabulary. These are the
 
 **Don't worry if this feels overwhelming**—you'll learn these naturally as you build your first agent in the hands-on section.
 
-![Screenshot: Copilot Studio Interface with Terminology Highlighted](images/01-interface-terminology.png)
+<!-- ![Screenshot: Copilot Studio Interface with Terminology Highlighted](images/01-interface-terminology.png) -->
 
 **Source**: [Authoring Fundamentals - Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-fundamentals)
 *Last accessed: December 18, 2024*
@@ -325,7 +325,7 @@ Let's build something real. In the next 45 minutes, you'll create a complete FAQ
    - **Production**: For real agents (choose this if unsure)
    - **Sandbox**: For testing only
 
-![Screenshot: Copilot Studio Sign-In Screen](images/01-signin-screen.png)
+<!-- ![Screenshot: Copilot Studio Sign-In Screen](images/01-signin-screen.png) -->
 
 **Expected Result**: You should see the Copilot Studio homepage with "Create" button visible.
 
@@ -347,7 +347,7 @@ Let's build something real. In the next 45 minutes, you'll create a complete FAQ
 
 4. Click **"Create"** button
 
-![Screenshot: Create New Agent Dialog](images/01-create-agent-dialog.png)
+<!-- ![Screenshot: Create New Agent Dialog](images/01-create-agent-dialog.png) -->
 *Creating your first agent with name, description, and language settings.*
 
 **Expected Result**:
@@ -377,7 +377,7 @@ Before we build custom topics, let's understand what Copilot Studio gave us auto
 
 **Click on the "Greeting" topic** to see how it's built:
 
-![Screenshot: Topics List Showing System Topics](images/01-topics-list.png)
+<!-- ![Screenshot: Topics List Showing System Topics](images/01-topics-list.png) -->
 
 **What to Notice**:
 1. **Trigger Phrases**: Words that start this topic ("hi", "hello", "hey")
@@ -390,7 +390,7 @@ Before we build custom topics, let's understand what Copilot Studio gave us auto
 User says trigger phrase → Agent executes nodes → Conversation flows
 ```
 
-![Screenshot: Greeting Topic Authoring Canvas](images/01-greeting-topic-canvas.png)
+<!-- ![Screenshot: Greeting Topic Authoring Canvas](images/01-greeting-topic-canvas.png) -->
 *The Greeting topic showing trigger phrases and message nodes in a visual flow.*
 
 **Don't change anything yet**—we'll create our own topics from scratch so you understand the full process.
@@ -413,7 +413,7 @@ Now we'll build a topic that answers questions about paid time off (PTO).
    - **Description**: "Answers questions about vacation and paid time off"
 4. Click **"Create"**
 
-![Screenshot: New Topic Creation Dialog](images/01-new-topic-dialog.png)
+<!-- ![Screenshot: New Topic Creation Dialog](images/01-new-topic-dialog.png) -->
 
 ---
 
@@ -436,7 +436,7 @@ Trigger phrases are the different ways users might ask about PTO. Add at least 1
 
 **Why So Many Variations?** Users ask the same question hundreds of different ways. More trigger phrases = better chance the agent recognizes the question.
 
-![Screenshot: Trigger Phrases Interface with 10 Examples](images/01-trigger-phrases.png)
+<!-- ![Screenshot: Trigger Phrases Interface with 10 Examples](images/01-trigger-phrases.png) -->
 
 **Pro Tip**: Include abbreviations (PTO), full terms (paid time off), and casual language (vacation days).
 
@@ -459,7 +459,7 @@ Now we'll create what the agent actually says when someone asks about PTO.
 I'd be happy to help you understand our PTO policy! Here's what you need to know:
 ```
 
-![Screenshot: First Message Node Added](images/01-first-message-node.png)
+<!-- ![Screenshot: First Message Node Added](images/01-first-message-node.png) -->
 
 ---
 
@@ -499,7 +499,7 @@ Need to submit a request? Say "How do I submit a PTO request" for step-by-step g
 - Bold important terms
 - Keep paragraphs short (2-3 lines max)
 
-![Screenshot: Policy Information Message Node](images/01-policy-info-node.png)
+<!-- ![Screenshot: Policy Information Message Node](images/01-policy-info-node.png) -->
 
 **Note**: Replace this example policy with your actual company policy. The agent will only know what you tell it.
 
@@ -522,7 +522,7 @@ Let's check if we answered the user's question:
      - Option 2: "I need more help"
    - **Save response as**: "userSatisfied" (this creates a variable)
 
-![Screenshot: Question Node with Multiple Choice](images/01-question-node-followup.png)
+<!-- ![Screenshot: Question Node with Multiple Choice](images/01-question-node-followup.png) -->
 
 **What This Does**: The agent asks if the user is satisfied and remembers their answer in a variable called "userSatisfied". We'll use this next.
 
@@ -563,7 +563,7 @@ In the meantime, you can also:
 Your conversation ID is {System.Conversation.Id} (mention this when contacting HR).
 ```
 
-![Screenshot: Branching Conversation Paths](images/01-branching-paths.png)
+<!-- ![Screenshot: Branching Conversation Paths](images/01-branching-paths.png) -->
 
 **What You Created**: A complete conversation that:
 1. Welcomes the user
@@ -602,7 +602,7 @@ Testing is critical. Let's verify the agent works correctly before showing it to
 2. A chat panel slides in from the right side
 3. You'll see a clean chat interface
 
-![Screenshot: Test Panel Interface](images/01-test-panel-empty.png)
+<!-- ![Screenshot: Test Panel Interface](images/01-test-panel-empty.png) -->
 
 **Source**: [Test Your Agent in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-test-bot)
 *Last accessed: December 18, 2024*
@@ -619,7 +619,7 @@ Testing is critical. Let's verify the agent works correctly before showing it to
    - Agent asks follow-up question
    - Two buttons appear: "Yes, thank you!" and "I need more help"
 
-![Screenshot: Successful Test Conversation](images/01-test-conversation-success.png)
+<!-- ![Screenshot: Successful Test Conversation](images/01-test-conversation-success.png) -->
 
 **What to Verify**:
 - ✅ PTO information displays correctly (no formatting errors)
@@ -650,7 +650,7 @@ Let's test if the agent recognizes different phrasings:
 4. Start over and repeat, but this time click **"I need more help"**
 5. **Expected Result**: Agent provides HR contact information
 
-![Screenshot: Both Follow-Up Paths Tested](images/01-test-both-paths.png)
+<!-- ![Screenshot: Both Follow-Up Paths Tested](images/01-test-both-paths.png) -->
 
 ---
 
@@ -872,7 +872,7 @@ After creating all 5 topics, test them in sequence:
 4. Then ask about work from home
 5. **Expected Result**: Agent should switch topics naturally
 
-![Screenshot: Multi-Topic Conversation Flow](images/01-multi-topic-test.png)
+<!-- ![Screenshot: Multi-Topic Conversation Flow](images/01-multi-topic-test.png) -->
 
 **Quality Checklist Before Publishing**:
 
@@ -900,7 +900,7 @@ Your agent works perfectly in testing. Now let's make it available to real users
 3. Click **"Publish"** to confirm
 4. Wait for "Published successfully" message (usually 30-60 seconds)
 
-![Screenshot: Publish Dialog with Changes Summary](images/01-publish-dialog.png)
+<!-- ![Screenshot: Publish Dialog with Changes Summary](images/01-publish-dialog.png) -->
 
 **What Publishing Does**:
 - Makes your agent available outside the test environment
@@ -928,7 +928,7 @@ Your agent works perfectly in testing. Now let's make it available to real users
 
 5. Click **"Save"**
 
-![Screenshot: Teams Channel Configuration](images/01-teams-channel-config.png)
+<!-- ![Screenshot: Teams Channel Configuration](images/01-teams-channel-config.png) -->
 
 **Source**: [Configure Microsoft Teams Channel](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams)
 *Last accessed: December 18, 2024*
@@ -951,7 +951,7 @@ Your agent works perfectly in testing. Now let's make it available to real users
 3. Send link to team members via email or Teams chat
 4. They click link → Teams opens → They click "Add"
 
-![Screenshot: Teams App Installation Dialog](images/01-teams-install.png)
+<!-- ![Screenshot: Teams App Installation Dialog](images/01-teams-install.png) -->
 
 **Important Permissions Note**:
 - Your IT admin must allow "custom app uploads" in Teams
@@ -972,7 +972,7 @@ Your agent works perfectly in testing. Now let's make it available to real users
    - Then: "How do I submit expenses?"
    - Then: "I need IT help"
 
-![Screenshot: Agent Running in Microsoft Teams](images/01-agent-in-teams.png)
+<!-- ![Screenshot: Agent Running in Microsoft Teams](images/01-agent-in-teams.png) -->
 
 **Expected Results**:
 - ✅ Agent responds to all 5 topics correctly
@@ -1110,7 +1110,7 @@ How do you know if your agent is working well? Let's define measurable success c
 - **Top topics**: Most-used conversation topics
 - **Abandon rate**: % of users who stopped mid-conversation
 
-![Screenshot: Analytics Dashboard](images/01-analytics-dashboard.png)
+<!-- ![Screenshot: Analytics Dashboard](images/01-analytics-dashboard.png) -->
 
 **What Good Looks Like**:
 - ✅ Sessions increasing week over week
@@ -1220,7 +1220,7 @@ Send this survey to pilot users (Microsoft Forms):
 - Fix any inaccuracies
 - Re-publish updated agent
 
-![Screenshot: Example Feedback Survey in Microsoft Forms](images/01-feedback-survey.png)
+<!-- ![Screenshot: Example Feedback Survey in Microsoft Forms](images/01-feedback-survey.png) -->
 
 ---
 
@@ -1299,7 +1299,7 @@ Our PTO policy states that employees accrue vacation days based on their tenure 
 Need details on blackout dates or rollover rules? Just ask!
 ```
 
-![Comparison: Information Overload vs Digestible Content](images/01-comparison-content-formatting.png)
+<!-- ![Comparison: Information Overload vs Digestible Content](images/01-comparison-content-formatting.png) -->
 
 ---
 
@@ -1412,7 +1412,7 @@ Try asking about one of these topics, or I can connect you with someone who can 
 
 **Visual Reminder**: If "Publish" button has orange dot, you have unpublished changes.
 
-![Screenshot: Publish Button with Change Indicator](images/01-publish-indicator.png)
+<!-- ![Screenshot: Publish Button with Change Indicator](images/01-publish-indicator.png) -->
 
 ---
 
@@ -1616,7 +1616,7 @@ ROI isn't just about time and money. These benefits are harder to quantify but e
 - **After**: Analytics show top topics, knowledge gaps, user satisfaction
 - **Value**: Data-driven decisions about policy communication and documentation
 
-![Diagram: Complete Business Value Framework](images/01-diagram-business-value.png)
+<!-- ![Diagram: Complete Business Value Framework](images/01-diagram-business-value.png) -->
 
 ---
 

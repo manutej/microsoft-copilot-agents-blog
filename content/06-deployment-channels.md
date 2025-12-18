@@ -30,7 +30,7 @@ Most organizations struggle with fragmented support channels—one system for we
 
 By the end of this guide, you'll deploy the same agent to Microsoft Teams (for employees), your company website (for customers), and Power Apps mobile (for field workers)—all in under 70 minutes.
 
-![Diagram: Single Agent, Multiple Channels](images/06-diagram-multichannel-overview.png)
+<!-- ![Diagram: Single Agent, Multiple Channels](images/06-diagram-multichannel-overview.png) -->
 *One agent deployed to Teams, web, mobile, and messaging platforms simultaneously.*
 
 ---
@@ -81,7 +81,7 @@ Users (Employees | Customers | Partners | Field Teams)
 **Source**: [ABN AMRO Bank Microsoft Customer Story](https://www.microsoft.com/en/customers/story/19754-abn-amro-bank-microsoft-copilot-studio)
 *Last accessed: December 18, 2024*
 
-![Diagram: Traditional vs Multi-Channel Architecture](images/06-diagram-architecture-comparison.png)
+<!-- ![Diagram: Traditional vs Multi-Channel Architecture](images/06-diagram-architecture-comparison.png) -->
 *Traditional: Separate systems per channel. Multi-channel: One core, multiple interfaces.*
 
 ---
@@ -143,7 +143,7 @@ Before we dive into channels, understand these two essential steps:
 **Source**: [Configure Channels in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels)
 *Last accessed: December 18, 2024*
 
-![Screenshot: Publish Dialog with Channels List](images/06-publish-channels-dialog.png)
+<!-- ![Screenshot: Publish Dialog with Channels List](images/06-publish-channels-dialog.png) -->
 *Publishing makes your agent available across all configured channels.*
 
 ---
@@ -216,7 +216,7 @@ Let's compare all available channels to help you select the right deployment tar
 - Perfect for stakeholder demos and internal testing
 - Not suitable for production (Microsoft branding, not customizable)
 
-![Decision Tree: Channel Selection](images/06-decision-tree-channels.png)
+<!-- ![Decision Tree: Channel Selection](images/06-decision-tree-channels.png) -->
 
 ---
 
@@ -337,7 +337,7 @@ Copilot Studio offers two distinct Teams deployment paths:
 - Perfect for pilots (test with 10-20 users first)
 - Easy rollback (stop sharing link)
 
-![Screenshot: Teams Installation Link Dialog](images/06-teams-install-link.png)
+<!-- ![Screenshot: Teams Installation Link Dialog](images/06-teams-install-link.png) -->
 *Share a direct installation link for controlled agent distribution.*
 
 ---
@@ -398,7 +398,7 @@ Copilot Studio offers two distinct Teams deployment paths:
 **Source**: [Send Proactive Microsoft Teams Messages](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-proactive-message)
 *Last accessed: December 18, 2024*
 
-![Screenshot: Teams Agent with Adaptive Card](images/06-teams-adaptive-card.png)
+<!-- ![Screenshot: Teams Agent with Adaptive Card](images/06-teams-adaptive-card.png) -->
 *Agent displays rich Adaptive Card with action buttons in Teams.*
 
 ---
@@ -443,7 +443,7 @@ Before deploying to Teams, you MUST provide:
 **Source**: [Create Privacy Statement and Terms of Use for Teams](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-terms-of-use-teams)
 *Last accessed: December 18, 2024*
 
-![Screenshot: Privacy and Terms Configuration](images/06-privacy-terms-settings.png)
+<!-- ![Screenshot: Privacy and Terms Configuration](images/06-privacy-terms-settings.png) -->
 
 ---
 
@@ -484,7 +484,7 @@ The web channel makes your agent accessible to anyone with a browser—no instal
 **Source**: [Configure Channels - Demo Website](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels)
 *Last accessed: December 18, 2024*
 
-![Screenshot: Demo Website Interface](images/06-demo-website-interface.png)
+<!-- ![Screenshot: Demo Website Interface](images/06-demo-website-interface.png) -->
 *Microsoft-hosted demo website for quick testing and stakeholder demos.*
 
 ---
@@ -587,7 +587,7 @@ The web channel makes your agent accessible to anyone with a browser—no instal
 - E-commerce sites (customer support)
 - SaaS applications (in-app help)
 
-![Screenshot: Website JavaScript Widget](images/06-website-js-widget.png)
+<!-- ![Screenshot: Website JavaScript Widget](images/06-website-js-widget.png) -->
 *Floating chat widget with custom branding embedded on company website.*
 
 ---
@@ -697,7 +697,7 @@ window.WebChat.renderWebChat({
 **Source**: [Configure Channels - Custom Website](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels)
 *Last accessed: December 18, 2024*
 
-![Screenshot: Website Channel Theme Customization](images/06-website-theme-config.png)
+<!-- ![Screenshot: Website Channel Theme Customization](images/06-website-theme-config.png) -->
 
 ---
 
@@ -753,7 +753,7 @@ Mobile deployment enables your agent on smartphones and tablets—critical for f
 - Microsoft credentials required (not suitable for public customers)
 - Dependent on Power Apps mobile app updates and features
 
-![Screenshot: Agent in Power Apps Mobile](images/06-power-apps-mobile.png)
+<!-- ![Screenshot: Agent in Power Apps Mobile](images/06-power-apps-mobile.png) -->
 *Agent running in Power Apps mobile app on iOS and Android devices.*
 
 ---
@@ -835,7 +835,7 @@ Mobile deployment enables your agent on smartphones and tablets—critical for f
 - **Camera Integration**: Scan barcodes, take photos of issues
 - **Voice Input**: Speech-to-text for hands-free interaction
 
-![Diagram: Mobile Optimization Guidelines](images/06-mobile-optimization.png)
+<!-- ![Diagram: Mobile Optimization Guidelines](images/06-mobile-optimization.png) -->
 
 ---
 
@@ -939,7 +939,7 @@ Copilot Studio Agent
 - Uncertain about user adoption on messaging platforms
 - Budget constraints (Azure costs + development costs)
 
-![Diagram: Azure Bot Service Architecture](images/06-azure-bot-architecture.png)
+<!-- ![Diagram: Azure Bot Service Architecture](images/06-azure-bot-architecture.png) -->
 
 ---
 
@@ -1070,7 +1070,7 @@ Different channels require different authentication approaches. Here's your deci
 
 **Example**: SaaS application agent authenticating via Okta SSO
 
-![Diagram: Authentication Flow Comparison](images/06-authentication-flows.png)
+<!-- ![Diagram: Authentication Flow Comparison](images/06-authentication-flows.png) -->
 
 ---
 
@@ -1151,7 +1151,7 @@ We'll create a simple agent that answers common product questions. This agent wi
 
 **Expected Result**: Agent created successfully, redirected to agent overview page
 
-![Screenshot: Create Product Support Agent](images/06-create-agent-dialog.png)
+<!-- ![Screenshot: Create Product Support Agent](images/06-create-agent-dialog.png) -->
 
 ---
 
@@ -1205,7 +1205,7 @@ Need detailed specs? Ask about a specific model!
 
 6. Click **Save**
 
-![Screenshot: Product Information Topic](images/06-topic-product-info.png)
+<!-- ![Screenshot: Product Information Topic](images/06-topic-product-info.png) -->
 
 ---
 
@@ -1272,7 +1272,7 @@ I'll help you troubleshoot! Let's start with the basics:
 
 7. Click **Save**
 
-![Screenshot: Troubleshooting Topic with Branching](images/06-topic-troubleshooting.png)
+<!-- ![Screenshot: Troubleshooting Topic with Branching](images/06-topic-troubleshooting.png) -->
 
 ---
 
@@ -1338,7 +1338,7 @@ Claim processing time: 2-3 business days
 
 **If issues**: Review trigger phrases, check for typos, ensure topics are "On"
 
-![Screenshot: Testing All Topics](images/06-testing-all-topics.png)
+<!-- ![Screenshot: Testing All Topics](images/06-testing-all-topics.png) -->
 
 ---
 
@@ -1374,7 +1374,7 @@ Claim processing time: 2-3 business days
    - **Accent color**: Choose brand color (hex code, e.g., #0078D4)
 5. Click **Save**
 
-![Screenshot: Teams Channel Configuration](images/06-teams-channel-setup.png)
+<!-- ![Screenshot: Teams Channel Configuration](images/06-teams-channel-setup.png) -->
 
 **Note**: If you don't have privacy/terms URLs yet, use your company homepage temporarily (update later before org-wide rollout).
 
@@ -1391,7 +1391,7 @@ Claim processing time: 2-3 business days
 4. Click **Add** button
 5. Agent appears in Teams sidebar under "Apps"
 
-![Screenshot: Teams App Installation](images/06-teams-install-process.png)
+<!-- ![Screenshot: Teams App Installation](images/06-teams-install-process.png) -->
 
 ---
 
@@ -1421,7 +1421,7 @@ Claim processing time: 2-3 business days
    - ✅ Agent responds quickly (< 2 seconds)
    - ✅ Conversation history persists (scroll up to see earlier messages)
 
-![Screenshot: Agent Running in Teams](images/06-teams-testing.png)
+<!-- ![Screenshot: Agent Running in Teams](images/06-teams-testing.png) -->
 
 ---
 
@@ -1475,7 +1475,7 @@ Thanks!
    - **Language**: English (United States)
 5. Click **Save**
 
-![Screenshot: Website Channel Configuration](images/06-website-channel-config.png)
+<!-- ![Screenshot: Website Channel Configuration](images/06-website-channel-config.png) -->
 
 ---
 
@@ -1630,7 +1630,7 @@ Create a simple HTML page to embed your agent:
    - ✅ Chat is functional and responsive
    - ✅ Mobile responsive (test by resizing browser window)
 
-![Screenshot: Website Embedded Agent](images/06-website-embedded-test.png)
+<!-- ![Screenshot: Website Embedded Agent](images/06-website-embedded-test.png) -->
 
 ---
 
@@ -1699,7 +1699,7 @@ If you prefer a floating chat bubble (like Intercom/Drift):
 
 **Advantage**: Floating widget doesn't block page content, feels like live chat
 
-![Screenshot: JavaScript Widget Floating Chat](images/06-website-widget.png)
+<!-- ![Screenshot: JavaScript Widget Floating Chat](images/06-website-widget.png) -->
 
 ---
 
@@ -1717,7 +1717,7 @@ If you prefer a floating chat bubble (like Intercom/Drift):
    - **Authentication**: Microsoft (default for employees)
 5. Click **Save**
 
-![Screenshot: Mobile Channel Configuration](images/06-mobile-channel-config.png)
+<!-- ![Screenshot: Mobile Channel Configuration](images/06-mobile-channel-config.png) -->
 
 ---
 
@@ -1735,7 +1735,7 @@ If you prefer a floating chat bubble (like Intercom/Drift):
 3. Install **Microsoft Power Apps** (by Microsoft Corporation)
 4. Open app after installation
 
-![Screenshot: Power Apps Mobile in App Stores](images/06-power-apps-stores.png)
+<!-- ![Screenshot: Power Apps Mobile in App Stores](images/06-power-apps-stores.png) -->
 
 ---
 
@@ -1749,7 +1749,7 @@ If you prefer a floating chat bubble (like Intercom/Drift):
 
 **Expected Result**: You see Power Apps mobile home screen with app list
 
-![Screenshot: Power Apps Mobile Home Screen](images/06-power-apps-home.png)
+<!-- ![Screenshot: Power Apps Mobile Home Screen](images/06-power-apps-home.png) -->
 
 ---
 
@@ -1797,7 +1797,7 @@ If you prefer a floating chat bubble (like Intercom/Drift):
    - ✅ Keyboard appears/hides correctly
    - ✅ Responses load quickly (< 3 seconds)
 
-![Screenshot: Agent in Power Apps Mobile](images/06-mobile-testing.png)
+<!-- ![Screenshot: Agent in Power Apps Mobile](images/06-mobile-testing.png) -->
 
 ---
 
@@ -1846,7 +1846,7 @@ Create a testing matrix:
 4. **Buttons work**: Multiple choice questions function on web, Teams, and mobile touch
 5. **Response time**: < 2 seconds in Teams, < 3 seconds on web/mobile
 
-![Screenshot: Multi-Channel Testing Matrix](images/06-testing-matrix.png)
+<!-- ![Screenshot: Multi-Channel Testing Matrix](images/06-testing-matrix.png) -->
 
 ---
 
@@ -1922,7 +1922,7 @@ Based on testing, note any improvements needed:
 
 **Congratulations!** You've successfully deployed one agent across three channels: Teams (employees), web (customers), and mobile (field workers). Same agent core, three different user experiences.
 
-![Diagram: Multi-Channel Deployment Complete](images/06-multichannel-complete.png)
+<!-- ![Diagram: Multi-Channel Deployment Complete](images/06-multichannel-complete.png) -->
 
 ---
 
@@ -2039,7 +2039,7 @@ Based on enterprise deployments:
 **Source**: [ABN AMRO Bank Microsoft Customer Story](https://www.microsoft.com/en/customers/story/19754-abn-amro-bank-microsoft-copilot-studio)
 *Last accessed: December 18, 2024*
 
-![Chart: Adoption Rates by Channel](images/06-adoption-rates-chart.png)
+<!-- ![Chart: Adoption Rates by Channel](images/06-adoption-rates-chart.png) -->
 
 ---
 
@@ -2069,7 +2069,7 @@ Based on enterprise deployments:
 
 **Visual Indicator**: Copilot Studio shows orange dot on "Publish" button when unpublished changes exist.
 
-![Screenshot: Publish Indicator](images/06-publish-indicator.png)
+<!-- ![Screenshot: Publish Indicator](images/06-publish-indicator.png) -->
 
 ---
 
@@ -2190,7 +2190,7 @@ ELSE
   Show complete information
 ```
 
-![Comparison: Desktop vs Mobile Optimized Content](images/06-desktop-mobile-comparison.png)
+<!-- ![Comparison: Desktop vs Mobile Optimized Content](images/06-desktop-mobile-comparison.png) -->
 
 ---
 
@@ -2349,7 +2349,7 @@ Website: 50 sessions/month, 70% CSAT → ⚠️ Promote more or optimize
 Mobile: 10 sessions/month, 60% CSAT → ❌ Consider removing
 ```
 
-![Screenshot: Channel-Specific Analytics Dashboard](images/06-analytics-by-channel.png)
+<!-- ![Screenshot: Channel-Specific Analytics Dashboard](images/06-analytics-by-channel.png) -->
 
 **Source**: [Analytics in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-overview)
 *Last accessed: December 18, 2024*
@@ -2438,7 +2438,7 @@ You've mastered the basics of multi-channel deployment. Here's what comes next i
 
 **Next Milestone**: Level 3 (Channel-Optimized) - Blogs 7-9 will get you there
 
-![Diagram: Multi-Channel Maturity Model](images/06-maturity-model.png)
+<!-- ![Diagram: Multi-Channel Maturity Model](images/06-maturity-model.png) -->
 
 ---
 
