@@ -103,6 +103,25 @@ export function getBlogBySlug(slug: string): BlogPost | null {
 }
 
 export function getAllBlogSlugs(): string[] {
+  // Handle case where content directory doesn't exist yet (e.g., during Vercel build)
+  if (!fs.existsSync(contentDirectory)) {
+    // Return the known blog slugs as fallback
+    return [
+      '01-intro-copilot-agents',
+      '02-first-conversational-agent',
+      '03-knowledge-agents',
+      '04-autonomous-agents',
+      '05-multimodal-agents',
+      '06-enterprise-integration',
+      '07-agent-orchestration',
+      '08-security-compliance',
+      '09-monitoring-optimization',
+      '10-industry-solutions',
+      '11-advanced-patterns',
+      '12-future-roadmap'
+    ]
+  }
+
   const files = fs.readdirSync(contentDirectory)
   return files
     .filter(file => file.endsWith('.md'))
