@@ -72,6 +72,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Copied content (from parent directory during build)
-/content/
-/public/images/
+# Content is now at root and should be committed
+# Removed: /content/
+# Removed: /public/images/
