@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/copy-content.js",
+    "prebuild": "node scripts-nextjs/copy-content.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

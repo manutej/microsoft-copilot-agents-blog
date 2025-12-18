@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd blog-site && npm run build",
-  "outputDirectory": "blog-site/out",
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
   "framework": "nextjs",
-  "installCommand": "cd blog-site && npm install --legacy-peer-deps"
+  "installCommand": "npm install --legacy-peer-deps"
 }
