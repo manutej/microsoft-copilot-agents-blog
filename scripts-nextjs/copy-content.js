@@ -56,31 +56,36 @@ function copyDirectoryRecursive(source, destination) {
 
 try {
   // Copy content directory
-  const contentSource = join(parentDir, 'content')
+  // Content is now at project root after restructure
+  const contentSource = join(projectRoot, 'content')
   const contentDest = join(projectRoot, 'content')
 
   console.log(`\nCopying content from: ${contentSource}`)
   console.log(`                  to: ${contentDest}`)
 
   if (existsSync(contentSource)) {
-    copyDirectoryRecursive(contentSource, contentDest)
+    // Content already in correct location, just verify
     const files = readdirSync(contentDest)
-    console.log(`✅ Copied ${files.length} files from content/`)
+    console.log(`✅ Found ${files.length} files in content/`)
   } else {
     console.warn('⚠️  Warning: Content source directory not found')
   }
 
   // Copy images directory to public/images
-  const imagesSource = join(parentDir, 'images')
+  const imagesSource = join(projectRoot, 'images')
   const imagesDest = join(projectRoot, 'public', 'images')
 
   console.log(`\nCopying images from: ${imagesSource}`)
   console.log(`                 to: ${imagesDest}`)
 
   if (existsSync(imagesSource)) {
+    // Create public/images if it doesn't exist
+    if (!existsSync(imagesDest)) {
+      mkdirSync(imagesDest, { recursive: true })
+    }
     copyDirectoryRecursive(imagesSource, imagesDest)
     const files = readdirSync(imagesDest)
-    console.log(`✅ Copied ${files.length} files from images/`)
+    console.log(`✅ Copied ${files.length} files to public/images/`)
   } else {
     console.warn('⚠️  Warning: Images source directory not found')
   }
