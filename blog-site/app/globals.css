@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Microsoft Copilot Blue Colors */
+  --color-copilot-blue-50: #E3F2FD;
+  --color-copilot-blue-100: #BBDEFB;
+  --color-copilot-blue-300: #64B5F6;
+  --color-copilot-blue-500: #0078D4;
+  --color-copilot-blue-700: #005A9E;
+  --color-copilot-blue-900: #003D6B;
+
+  /* Copilot Gray Colors */
+  --color-copilot-gray-50: #F8F9FA;
+  --color-copilot-gray-100: #E9ECEF;
+  --color-copilot-gray-200: #DEE2E6;
+  --color-copilot-gray-600: #6C757D;
+  --color-copilot-gray-900: #212529;
+}
+
+@layer base {
+  body {
+    background-color: white;
+    color: var(--color-copilot-gray-900);
+  }
+
+  .dark body {
+    background-color: var(--color-copilot-gray-900);
+    color: var(--color-copilot-gray-100);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-copilot-blue-500);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-copilot-blue-700);
+  }
+
+  .btn-secondary {
+    border: 2px solid var(--color-copilot-blue-500);
+    color: var(--color-copilot-blue-500);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-copilot-blue-500);
+    color: white;
+  }
+}

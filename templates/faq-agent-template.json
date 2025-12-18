@@ -1,0 +1,334 @@
+{
+  "_comments": [
+    "FAQ Agent Configuration Template",
+    "This template provides a ready-to-use structure for creating an FAQ agent in Microsoft Copilot Studio",
+    "Replace placeholders marked with [YOUR_...] with your company-specific information",
+    "Each topic includes trigger phrases, responses, and follow-up options"
+  ],
+
+  "agentMetadata": {
+    "name": "Company Policy Assistant",
+    "description": "Answers common questions about company policies and procedures",
+    "language": "en-US",
+    "greeting": "Hi! I'm your Company Policy Assistant. I can help answer questions about PTO, benefits, remote work, expenses, and more. What would you like to know?"
+  },
+
+  "topics": [
+    {
+      "topicName": "PTO Policy",
+      "description": "Answers questions about paid time off and vacation policies",
+      "triggerPhrases": [
+        "What's the PTO policy?",
+        "How much vacation do I get?",
+        "Can you tell me about time off?",
+        "How do I request vacation?",
+        "What are the PTO rules?",
+        "vacation days",
+        "time off policy",
+        "paid leave",
+        "how many days off"
+      ],
+      "response": {
+        "welcomeMessage": "I'd be happy to help you understand our PTO policy! Here's what you need to know:",
+        "mainContent": "📋 PTO Policy Summary:\n\n🗓️ Accrual Rate:\n- 0-2 years: [YOUR_PTO_DAYS_NEW] days/year\n- 2-5 years: [YOUR_PTO_DAYS_MID] days/year\n- 5+ years: [YOUR_PTO_DAYS_SENIOR] days/year\n\n📝 Request Process:\n1. Submit request in [YOUR_SYSTEM_NAME] at least [YOUR_ADVANCE_NOTICE] in advance\n2. Manager approval required\n3. You'll receive confirmation via email\n\n⏰ Blackout Dates:\n- [YOUR_BLACKOUT_PERIOD_1]\n- [YOUR_BLACKOUT_PERIOD_2]\n\n💡 Unused PTO:\n- Rolls over up to [YOUR_ROLLOVER_DAYS] days annually\n- [YOUR_CASH_OUT_POLICY]",
+        "followUpQuestion": "Does this answer your question about PTO?",
+        "followUpOptions": [
+          {
+            "text": "Yes, thank you",
+            "response": "Great! If you have other questions, just ask. Have a great day!"
+          },
+          {
+            "text": "I need more help",
+            "response": "I'll connect you with someone from HR who can provide detailed assistance. You can reach HR at [YOUR_HR_EMAIL] or [YOUR_HR_PHONE]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Benefits Enrollment",
+      "description": "Information about benefits enrollment and options",
+      "triggerPhrases": [
+        "How do I enroll in benefits?",
+        "When is open enrollment?",
+        "What benefits do we offer?",
+        "health insurance",
+        "benefits options",
+        "dental coverage",
+        "401k enrollment"
+      ],
+      "response": {
+        "welcomeMessage": "Here's everything you need to know about our benefits enrollment:",
+        "mainContent": "🏥 Benefits Enrollment:\n\n📅 Enrollment Periods:\n- New Hire: First [YOUR_ENROLLMENT_DAYS] days of employment\n- Annual Open Enrollment: [YOUR_OPEN_ENROLLMENT_DATES]\n- Qualifying Life Event: 30 days from event date\n\n💼 Available Benefits:\n✅ Medical Insurance (multiple plan options)\n✅ Dental Insurance\n✅ Vision Insurance\n✅ 401(k) with [YOUR_MATCH_PERCENT]% company match\n✅ Life Insurance ([YOUR_LIFE_INSURANCE_AMOUNT]x salary)\n✅ Disability Insurance (Short & Long term)\n✅ FSA/HSA options\n\n🔗 Enrollment Instructions:\n1. Log into [YOUR_BENEFITS_PORTAL]\n2. Review plan options and costs\n3. Make your selections\n4. Submit before deadline\n\n📞 Need Help?\nContact our benefits team at [YOUR_BENEFITS_EMAIL]",
+        "followUpQuestion": "Was this information helpful?",
+        "followUpOptions": [
+          {
+            "text": "Yes, thank you",
+            "response": "Wonderful! Don't hesitate to reach out if you have more questions."
+          },
+          {
+            "text": "I need to talk to someone",
+            "response": "No problem! Our benefits team is available at [YOUR_BENEFITS_EMAIL] or [YOUR_BENEFITS_PHONE]. They can help you with specific enrollment questions."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Work From Home Policy",
+      "description": "Remote work and work from home policies",
+      "triggerPhrases": [
+        "Can I work from home?",
+        "What's the remote work policy?",
+        "WFH rules",
+        "hybrid work",
+        "remote work eligibility",
+        "work remotely"
+      ],
+      "response": {
+        "welcomeMessage": "Here's our work from home and remote work policy:",
+        "mainContent": "🏠 Work From Home Policy:\n\n✅ Eligibility:\n- [YOUR_WFH_ELIGIBILITY_CRITERIA]\n- Manager approval required\n- Department-specific guidelines may apply\n\n📅 Hybrid Schedule:\n- [YOUR_HYBRID_SCHEDULE_DETAILS]\n- Core collaboration days: [YOUR_IN_OFFICE_DAYS]\n- Flexible days: [YOUR_FLEXIBLE_DAYS]\n\n💻 Equipment Provided:\n- [YOUR_WFH_EQUIPMENT_LIST]\n\n📋 Requirements:\n✅ Reliable internet connection ([YOUR_MIN_SPEED_REQUIRED])\n✅ Dedicated workspace\n✅ Available during core business hours: [YOUR_CORE_HOURS]\n✅ Attend virtual meetings as scheduled\n\n🔒 Security:\n- VPN required for all company system access\n- Follow [YOUR_SECURITY_POLICY_LINK]\n\nTo request remote work, submit a request through [YOUR_REQUEST_SYSTEM].",
+        "followUpQuestion": "Did this answer your question about remote work?",
+        "followUpOptions": [
+          {
+            "text": "Yes, thank you",
+            "response": "Great! Enjoy your flexibility and stay productive!"
+          },
+          {
+            "text": "I have more questions",
+            "response": "For specific questions about your role's remote work eligibility, please speak with your manager or contact HR at [YOUR_HR_EMAIL]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Expense Reimbursement",
+      "description": "How to submit expenses and get reimbursed",
+      "triggerPhrases": [
+        "How do I submit expenses?",
+        "Expense report process",
+        "Get reimbursed",
+        "expense reimbursement",
+        "submit receipts",
+        "travel expenses"
+      ],
+      "response": {
+        "welcomeMessage": "Here's how to submit expenses and get reimbursed:",
+        "mainContent": "💰 Expense Reimbursement Process:\n\n📝 Reimbursable Expenses:\n✅ Business travel (flights, hotels, ground transport)\n✅ Client meals and entertainment\n✅ Office supplies (with manager approval)\n✅ Professional development (pre-approved)\n✅ [YOUR_OTHER_REIMBURSABLE_EXPENSES]\n\n📋 Submission Steps:\n1. Log into [YOUR_EXPENSE_SYSTEM]\n2. Create new expense report\n3. Upload receipts (required for expenses over $[YOUR_RECEIPT_THRESHOLD])\n4. Categorize each expense\n5. Add business purpose description\n6. Submit for manager approval\n\n⏱️ Timeline:\n- Submit within [YOUR_SUBMISSION_DEADLINE] of expense date\n- Manager approval: [YOUR_APPROVAL_SLA]\n- Reimbursement processing: [YOUR_REIMBURSEMENT_SLA]\n- Payment via direct deposit on [YOUR_PAYMENT_SCHEDULE]\n\n📞 Questions?\nContact Finance at [YOUR_FINANCE_EMAIL]",
+        "followUpQuestion": "Does this help with your expense question?",
+        "followUpOptions": [
+          {
+            "text": "Yes, thanks",
+            "response": "You're welcome! Make sure to keep those receipts!"
+          },
+          {
+            "text": "I need help with a specific expense",
+            "response": "For specific expense questions or policy clarifications, please contact our Finance team at [YOUR_FINANCE_EMAIL] or [YOUR_FINANCE_PHONE]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "IT Support Contact",
+      "description": "How to get IT help and support",
+      "triggerPhrases": [
+        "IT help",
+        "Technical support",
+        "Computer problem",
+        "IT helpdesk",
+        "tech support",
+        "password reset",
+        "software issue"
+      ],
+      "response": {
+        "welcomeMessage": "I can help you get IT support! Here's how:",
+        "mainContent": "💻 IT Support:\n\n🕐 Helpdesk Hours:\n- Monday-Friday: [YOUR_IT_HOURS]\n- Weekend/After Hours: Emergency support only\n\n📞 Contact Methods:\n- Email: [YOUR_IT_EMAIL]\n- Phone: [YOUR_IT_PHONE]\n- Self-Service Portal: [YOUR_IT_PORTAL_URL]\n- Walk-up support: [YOUR_IT_LOCATION]\n\n🔧 Common Self-Service Solutions:\n✅ Password Reset: [YOUR_PASSWORD_RESET_URL]\n✅ Software Downloads: [YOUR_SOFTWARE_PORTAL_URL]\n✅ VPN Setup Guide: [YOUR_VPN_GUIDE_URL]\n✅ Email Setup: [YOUR_EMAIL_SETUP_URL]\n\n⚡ Priority Levels:\n- P1 (Emergency): System down, security breach\n- P2 (High): Major function impaired\n- P3 (Medium): Minor issue, workaround available\n- P4 (Low): General questions, requests\n\n📝 When Submitting a Ticket:\n- Describe the issue clearly\n- Include error messages\n- Note when the problem started\n- Mention troubleshooting already attempted",
+        "followUpQuestion": "Did you find what you need for IT support?",
+        "followUpOptions": [
+          {
+            "text": "Yes, I can take it from here",
+            "response": "Perfect! The IT team is always ready to help if you need them."
+          },
+          {
+            "text": "I need immediate help",
+            "response": "For urgent issues, please call the IT helpdesk immediately at [YOUR_IT_PHONE]. For non-urgent issues, submit a ticket at [YOUR_IT_PORTAL_URL]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Company Holidays",
+      "description": "List of company holidays and closure dates",
+      "triggerPhrases": [
+        "company holidays",
+        "when is the office closed",
+        "holiday schedule",
+        "days off",
+        "public holidays"
+      ],
+      "response": {
+        "welcomeMessage": "Here are our company holidays for [YOUR_CURRENT_YEAR]:",
+        "mainContent": "📅 Company Holidays [YOUR_CURRENT_YEAR]:\n\n✅ [YOUR_HOLIDAY_1_NAME]: [YOUR_HOLIDAY_1_DATE]\n✅ [YOUR_HOLIDAY_2_NAME]: [YOUR_HOLIDAY_2_DATE]\n✅ [YOUR_HOLIDAY_3_NAME]: [YOUR_HOLIDAY_3_DATE]\n✅ [YOUR_HOLIDAY_4_NAME]: [YOUR_HOLIDAY_4_DATE]\n✅ [YOUR_HOLIDAY_5_NAME]: [YOUR_HOLIDAY_5_DATE]\n✅ [YOUR_HOLIDAY_6_NAME]: [YOUR_HOLIDAY_6_DATE]\n✅ [YOUR_HOLIDAY_7_NAME]: [YOUR_HOLIDAY_7_DATE]\n✅ [YOUR_HOLIDAY_8_NAME]: [YOUR_HOLIDAY_8_DATE]\n\n📝 Notes:\n- Holidays falling on weekends are observed on [YOUR_WEEKEND_HOLIDAY_POLICY]\n- Some locations may observe additional local holidays\n- [YOUR_FLOATING_HOLIDAY_POLICY]\n\n🌍 International Offices:\nContact your local HR for region-specific holidays.",
+        "followUpQuestion": "Was this holiday information helpful?",
+        "followUpOptions": [
+          {
+            "text": "Yes, thank you",
+            "response": "Enjoy your time off!"
+          },
+          {
+            "text": "I have a question about holidays",
+            "response": "For specific holiday questions, please contact HR at [YOUR_HR_EMAIL]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Parking and Facilities",
+      "description": "Parking information and building access",
+      "triggerPhrases": [
+        "parking",
+        "where do I park",
+        "parking pass",
+        "building access",
+        "badge access",
+        "facilities"
+      ],
+      "response": {
+        "welcomeMessage": "Here's information about parking and building access:",
+        "mainContent": "🅿️ Parking & Facilities:\n\n🚗 Parking:\n- Location: [YOUR_PARKING_LOCATION]\n- Badge access required: [YOUR_PARKING_ACCESS_DETAILS]\n- Visitor parking: [YOUR_VISITOR_PARKING_INFO]\n- Cost: [YOUR_PARKING_COST_DETAILS]\n- Electric vehicle charging: [YOUR_EV_CHARGING_INFO]\n\n🏢 Building Access:\n- Main entrance: [YOUR_MAIN_ENTRANCE_LOCATION]\n- Hours: [YOUR_BUILDING_HOURS]\n- After-hours access: Badge required at [YOUR_AFTER_HOURS_ENTRANCE]\n- Security desk: [YOUR_SECURITY_LOCATION]\n\n🎫 Badge Information:\n- Pick up from: [YOUR_BADGE_PICKUP_LOCATION]\n- Lost badge: Contact [YOUR_SECURITY_CONTACT] immediately\n- Visitor badges: Available at [YOUR_VISITOR_BADGE_LOCATION]\n\n♿ Accessibility:\n- Accessible parking: [YOUR_ACCESSIBLE_PARKING_INFO]\n- Building features: [YOUR_ACCESSIBILITY_FEATURES]",
+        "followUpQuestion": "Did this answer your parking or facilities question?",
+        "followUpOptions": [
+          {
+            "text": "Yes, perfect",
+            "response": "Great! See you at the office!"
+          },
+          {
+            "text": "I need more help",
+            "response": "For additional facilities questions, contact our Facilities team at [YOUR_FACILITIES_EMAIL] or [YOUR_FACILITIES_PHONE]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Training and Development",
+      "description": "Professional development and training opportunities",
+      "triggerPhrases": [
+        "training opportunities",
+        "professional development",
+        "learning resources",
+        "courses available",
+        "skill development",
+        "career growth"
+      ],
+      "response": {
+        "welcomeMessage": "We're committed to your professional growth! Here's what's available:",
+        "mainContent": "📚 Training & Development:\n\n🎓 Learning Resources:\n✅ LinkedIn Learning: Free access for all employees\n✅ Internal training library: [YOUR_TRAINING_PORTAL_URL]\n✅ Lunch & Learn sessions: [YOUR_LUNCH_LEARN_SCHEDULE]\n✅ Mentorship program: [YOUR_MENTORSHIP_PROGRAM_INFO]\n\n💰 Professional Development Budget:\n- Annual budget: $[YOUR_TRAINING_BUDGET] per employee\n- Covers: Courses, certifications, conferences\n- Request process: [YOUR_TRAINING_REQUEST_PROCESS]\n- Approval: Manager review required\n\n🏆 Popular Programs:\n- Leadership development: [YOUR_LEADERSHIP_PROGRAM]\n- Technical certifications: [YOUR_CERT_PROGRAM]\n- Soft skills workshops: [YOUR_SOFT_SKILLS_PROGRAM]\n\n📝 How to Request Training:\n1. Browse available options in [YOUR_LEARNING_SYSTEM]\n2. Discuss with your manager\n3. Submit request for approval\n4. Complete training and share learnings with team\n\n🔗 More Information:\nVisit [YOUR_LEARNING_PORTAL_URL] or contact [YOUR_TRAINING_EMAIL]",
+        "followUpQuestion": "Is there anything else you'd like to know about training?",
+        "followUpOptions": [
+          {
+            "text": "No, this is helpful",
+            "response": "Wonderful! Keep learning and growing!"
+          },
+          {
+            "text": "I want to discuss specific training",
+            "response": "Great! Please discuss your training goals with your manager, or reach out to our Learning & Development team at [YOUR_TRAINING_EMAIL]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Performance Reviews",
+      "description": "Information about performance review process",
+      "triggerPhrases": [
+        "performance review",
+        "annual review",
+        "review process",
+        "performance evaluation",
+        "review cycle"
+      ],
+      "response": {
+        "welcomeMessage": "Here's how our performance review process works:",
+        "mainContent": "⭐ Performance Review Process:\n\n📅 Review Cycle:\n- Annual reviews: [YOUR_ANNUAL_REVIEW_TIMING]\n- Mid-year check-ins: [YOUR_MIDYEAR_REVIEW_TIMING]\n- Continuous feedback: Encouraged year-round via [YOUR_FEEDBACK_TOOL]\n\n📋 Process Steps:\n1. Self-assessment completion: [YOUR_SELF_ASSESSMENT_WINDOW]\n2. Peer feedback collection: [YOUR_PEER_FEEDBACK_WINDOW]\n3. Manager review: [YOUR_MANAGER_REVIEW_WINDOW]\n4. Review meeting: [YOUR_REVIEW_MEETING_TIMING]\n5. Goal setting for next period\n\n📊 Rating Scale:\n[YOUR_RATING_SCALE_DETAILS]\n\n💡 Tips for Success:\n✅ Keep track of accomplishments throughout the year\n✅ Be specific with examples in self-assessment\n✅ Seek feedback regularly, not just during review time\n✅ Set SMART goals for the next period\n\n🔗 Resources:\n- Review template: [YOUR_REVIEW_TEMPLATE_URL]\n- Goal-setting guide: [YOUR_GOAL_SETTING_GUIDE_URL]\n- Questions? Contact [YOUR_HR_EMAIL]",
+        "followUpQuestion": "Does this clarify the review process?",
+        "followUpOptions": [
+          {
+            "text": "Yes, thank you",
+            "response": "Great! Wishing you success in your review!"
+          },
+          {
+            "text": "I have specific questions",
+            "response": "For specific questions about your review, please speak with your manager or contact HR at [YOUR_HR_EMAIL]."
+          }
+        ]
+      }
+    },
+
+    {
+      "topicName": "Dress Code",
+      "description": "Company dress code and appearance guidelines",
+      "triggerPhrases": [
+        "dress code",
+        "what should I wear",
+        "attire policy",
+        "dress policy",
+        "what to wear"
+      ],
+      "response": {
+        "welcomeMessage": "Here's our dress code policy:",
+        "mainContent": "👔 Dress Code:\n\n📋 General Guidelines:\n[YOUR_DRESS_CODE_CATEGORY] - [YOUR_DRESS_CODE_DESCRIPTION]\n\n✅ Appropriate:\n- [YOUR_APPROPRIATE_ATTIRE_1]\n- [YOUR_APPROPRIATE_ATTIRE_2]\n- [YOUR_APPROPRIATE_ATTIRE_3]\n- [YOUR_APPROPRIATE_ATTIRE_4]\n\n❌ Not Appropriate:\n- [YOUR_INAPPROPRIATE_ATTIRE_1]\n- [YOUR_INAPPROPRIATE_ATTIRE_2]\n- [YOUR_INAPPROPRIATE_ATTIRE_3]\n\n🎯 Special Occasions:\n- Client meetings: [YOUR_CLIENT_MEETING_ATTIRE]\n- Casual Fridays: [YOUR_CASUAL_FRIDAY_POLICY]\n- Company events: [YOUR_EVENT_ATTIRE_GUIDANCE]\n\n💡 When in Doubt:\n- Check with your manager\n- Dress for the occasion (meeting, presentation, etc.)\n- Err on the side of more professional\n\n🏢 Department Variations:\nSome departments may have specific requirements. Check with your manager.",
+        "followUpQuestion": "Does this help with dress code questions?",
+        "followUpOptions": [
+          {
+            "text": "Yes, got it",
+            "response": "Perfect! Dress comfortably and professionally!"
+          },
+          {
+            "text": "I have a specific question",
+            "response": "For specific dress code questions, please contact your manager or HR at [YOUR_HR_EMAIL]."
+          }
+        ]
+      }
+    }
+  ],
+
+  "fallbackTopic": {
+    "name": "Fallback",
+    "message": "I don't have information about that specific topic yet. Here's how I can help:\n\n📋 I can answer questions about:\n✅ PTO and vacation policies\n✅ Benefits enrollment\n✅ Work from home policies\n✅ Expense reimbursement\n✅ IT support\n✅ Company holidays\n✅ Parking and facilities\n✅ Training opportunities\n✅ Performance reviews\n✅ Dress code\n\nFor questions outside these topics, please contact:\n- HR: [YOUR_HR_EMAIL]\n- IT: [YOUR_IT_EMAIL]\n- General questions: [YOUR_GENERAL_CONTACT_EMAIL]",
+    "escalationOptions": [
+      {
+        "text": "Contact HR",
+        "response": "I'll connect you with HR. You can reach them at [YOUR_HR_EMAIL] or [YOUR_HR_PHONE]. They're available [YOUR_HR_HOURS]."
+      },
+      {
+        "text": "Try asking differently",
+        "response": "Please try rephrasing your question, and I'll do my best to help!"
+      }
+    ]
+  },
+
+  "customizationInstructions": {
+    "step1": "Search for all [YOUR_...] placeholders in this file",
+    "step2": "Replace each placeholder with your company-specific information",
+    "step3": "Review trigger phrases - add variations specific to how your employees speak",
+    "step4": "Update response content to match your actual policies",
+    "step5": "Test each topic thoroughly before deployment",
+    "step6": "Add or remove topics based on your most common questions",
+    "placeholderList": [
+      "[YOUR_PTO_DAYS_NEW] - PTO days for new employees",
+      "[YOUR_PTO_DAYS_MID] - PTO days for mid-tenure",
+      "[YOUR_PTO_DAYS_SENIOR] - PTO days for senior employees",
+      "[YOUR_SYSTEM_NAME] - Your request system name",
+      "[YOUR_ADVANCE_NOTICE] - Required advance notice period",
+      "[YOUR_HR_EMAIL] - HR contact email",
+      "[YOUR_HR_PHONE] - HR contact phone",
+      "[YOUR_IT_EMAIL] - IT contact email",
+      "[YOUR_IT_PHONE] - IT contact phone"
+    ]
+  }
+}

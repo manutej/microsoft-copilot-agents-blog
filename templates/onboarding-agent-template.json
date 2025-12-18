@@ -1,0 +1,431 @@
+{
+  "_comments": [
+    "Employee Onboarding Agent Template",
+    "Complete conversation flow for collecting new employee information",
+    "This template demonstrates variable usage, branching logic, and email notifications",
+    "Replace all [YOUR_...] placeholders with your company-specific information"
+  ],
+
+  "agentMetadata": {
+    "name": "Employee Onboarding Assistant",
+    "description": "Guides new employees through onboarding process and collects required information",
+    "language": "en-US",
+    "estimatedCompletionTime": "5-7 minutes"
+  },
+
+  "conversationFlow": {
+    "topic": "Employee Onboarding",
+    "triggerPhrases": [
+      "I'm a new employee",
+      "New hire onboarding",
+      "I just joined the company",
+      "Starting soon",
+      "First day setup",
+      "Employee onboarding help",
+      "Get started as new hire",
+      "Onboarding process",
+      "New employee setup",
+      "I'm starting next week"
+    ],
+
+    "nodes": [
+      {
+        "nodeType": "message",
+        "nodeId": "greeting",
+        "content": "Welcome! 👋\n\nI'm your onboarding assistant, here to help you get started at [YOUR_COMPANY_NAME].\n\nI'll guide you through a quick setup process that takes about 5 minutes. I'll collect some basic information and provide you with everything you need for your first day.\n\nLet's get started!"
+      },
+
+      {
+        "nodeType": "question",
+        "nodeId": "collectName",
+        "questionText": "First, what's your full name?",
+        "entityType": "PersonName",
+        "variableName": "EmployeeName",
+        "required": true,
+        "validationMessage": "Please provide your full name (first and last name)"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "confirmName",
+        "content": "Great to meet you, {EmployeeName}! Let's continue.",
+        "usesVariables": ["EmployeeName"]
+      },
+
+      {
+        "nodeType": "question",
+        "nodeId": "collectDepartment",
+        "questionText": "Which department will you be joining?",
+        "entityType": "MultipleChoice",
+        "variableName": "Department",
+        "required": true,
+        "options": [
+          {
+            "value": "Engineering",
+            "displayText": "Engineering"
+          },
+          {
+            "value": "Sales",
+            "displayText": "Sales"
+          },
+          {
+            "value": "Marketing",
+            "displayText": "Marketing"
+          },
+          {
+            "value": "Finance",
+            "displayText": "Finance"
+          },
+          {
+            "value": "Human Resources",
+            "displayText": "Human Resources"
+          },
+          {
+            "value": "Operations",
+            "displayText": "Operations"
+          },
+          {
+            "value": "Customer Support",
+            "displayText": "Customer Support"
+          }
+        ],
+        "note": "ADD OR REMOVE DEPARTMENTS TO MATCH YOUR ORGANIZATION"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "confirmDepartment",
+        "content": "Perfect! I've noted that you'll be joining our {Department} team.",
+        "usesVariables": ["Department"]
+      },
+
+      {
+        "nodeType": "question",
+        "nodeId": "collectJobTitle",
+        "questionText": "What's your job title?",
+        "entityType": "FreeText",
+        "variableName": "JobTitle",
+        "required": true,
+        "exampleResponses": [
+          "Software Engineer",
+          "Senior Account Executive",
+          "Marketing Manager"
+        ]
+      },
+
+      {
+        "nodeType": "question",
+        "nodeId": "collectStartDate",
+        "questionText": "When is your official start date?",
+        "entityType": "Date",
+        "variableName": "StartDate",
+        "required": true,
+        "acceptedFormats": [
+          "MM/DD/YYYY",
+          "Month DD, YYYY",
+          "Natural language (e.g., 'next Monday', 'January 15')"
+        ]
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "confirmInfoSoFar",
+        "content": "Got it! Here's what I have so far:\n\n📋 Name: {EmployeeName}\n🏢 Department: {Department}\n💼 Role: {JobTitle}\n📅 Start Date: {StartDate}\n\nNext, let's talk about equipment...",
+        "usesVariables": ["EmployeeName", "Department", "JobTitle", "StartDate"]
+      },
+
+      {
+        "nodeType": "question",
+        "nodeId": "collectEquipment",
+        "questionText": "What equipment will you need? (Select all that apply)",
+        "entityType": "MultipleChoice",
+        "multiSelect": true,
+        "variableName": "Equipment",
+        "required": false,
+        "options": [
+          {
+            "value": "Laptop (Windows)",
+            "displayText": "💻 Laptop (Windows)"
+          },
+          {
+            "value": "Laptop (Mac)",
+            "displayText": "💻 Laptop (Mac)"
+          },
+          {
+            "value": "External Monitor (24 inch)",
+            "displayText": "🖥️ External Monitor (24\")"
+          },
+          {
+            "value": "External Monitor (27 inch)",
+            "displayText": "🖥️ External Monitor (27\")"
+          },
+          {
+            "value": "Wireless Keyboard and Mouse",
+            "displayText": "⌨️ Wireless Keyboard & Mouse"
+          },
+          {
+            "value": "Headset with Microphone",
+            "displayText": "🎧 Headset with Microphone"
+          },
+          {
+            "value": "Webcam",
+            "displayText": "📷 Webcam"
+          },
+          {
+            "value": "Docking Station",
+            "displayText": "🔌 Docking Station"
+          },
+          {
+            "value": "No additional equipment needed",
+            "displayText": "✅ No additional equipment needed"
+          }
+        ],
+        "note": "CUSTOMIZE EQUIPMENT OPTIONS FOR YOUR COMPANY'S AVAILABLE HARDWARE"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "acknowledgeEquipment",
+        "content": "Excellent! I'll make sure IT has your equipment ready: {Equipment}",
+        "usesVariables": ["Equipment"]
+      },
+
+      {
+        "nodeType": "condition",
+        "nodeId": "branchByDepartment",
+        "conditionVariable": "Department",
+        "branches": [
+          {
+            "conditionValue": "Engineering",
+            "nextNode": "engineeringChecklist"
+          },
+          {
+            "conditionValue": "Sales",
+            "nextNode": "salesChecklist"
+          },
+          {
+            "conditionValue": "Marketing",
+            "nextNode": "marketingChecklist"
+          },
+          {
+            "conditionValue": "Finance",
+            "nextNode": "financeChecklist"
+          },
+          {
+            "conditionValue": "Human Resources",
+            "nextNode": "hrChecklist"
+          },
+          {
+            "conditionValue": "Operations",
+            "nextNode": "operationsChecklist"
+          },
+          {
+            "conditionValue": "Customer Support",
+            "nextNode": "supportChecklist"
+          },
+          {
+            "isDefault": true,
+            "nextNode": "generalChecklist"
+          }
+        ]
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "engineeringChecklist",
+        "content": "🛠️ Engineering Onboarding Checklist\n\nBefore your start date:\n✅ Complete background check\n✅ Sign offer letter and NDA\n\nFirst Day (Week 1):\n✅ IT orientation and account setup\n✅ Get access to [YOUR_CODE_REPOS] (GitHub, GitLab, etc.)\n✅ Get access to [YOUR_PROJECT_TOOLS] (Jira, Asana, etc.)\n✅ Get access to [YOUR_COMMUNICATION_TOOLS] (Slack, Teams, etc.)\n✅ Meet your engineering manager\n✅ Set up development environment\n✅ Review engineering handbook\n\nFirst Week:\n✅ Attend engineering team standup\n✅ Complete security training\n✅ Get assigned to onboarding buddy\n✅ Review architecture documentation\n\nFirst Month:\n✅ Ship first pull request\n✅ Present at engineering demo day\n✅ Complete code review training\n\nYour manager will schedule 1:1 check-ins throughout your first 90 days.",
+        "note": "CUSTOMIZE THIS CHECKLIST FOR YOUR ENGINEERING ONBOARDING PROCESS"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "salesChecklist",
+        "content": "💼 Sales Onboarding Checklist\n\nBefore Start:\n✅ Complete background check\n✅ Sign offer letter\n\nFirst Day:\n✅ [YOUR_CRM_SYSTEM] access setup (Salesforce, HubSpot, etc.)\n✅ Meet sales leadership\n✅ Receive territory assignment\n✅ Get sales enablement materials\n\nFirst Week:\n✅ Product training (3 days)\n✅ Sales methodology workshop\n✅ Shadow senior sales rep\n✅ CRM training\n\nFirst Month:\n✅ Complete certification program\n✅ First client meeting (with mentor)\n✅ Pipeline development training\n✅ Attend sales team meeting\n\n30-60-90 day plan will be provided by your manager.",
+        "note": "CUSTOMIZE THIS CHECKLIST FOR YOUR SALES ONBOARDING PROCESS"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "marketingChecklist",
+        "content": "📢 Marketing Onboarding Checklist\n\nBefore Start:\n✅ Complete background check\n✅ Sign offer letter\n\nFirst Day:\n✅ Marketing tools access ([YOUR_MARKETING_TOOLS]: HubSpot, Google Analytics, Canva, etc.)\n✅ Meet marketing leadership\n✅ Review brand guidelines\n✅ Join marketing communication channels\n\nFirst Week:\n✅ Product knowledge training\n✅ Marketing strategy overview\n✅ Content calendar review\n✅ Analytics platform training\n\nFirst Month:\n✅ Complete first campaign project\n✅ Attend marketing team planning\n✅ Present at marketing showcase\n✅ Build marketing portfolio\n\nYour manager will provide detailed project roadmap.",
+        "note": "CUSTOMIZE THIS CHECKLIST FOR YOUR MARKETING ONBOARDING PROCESS"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "financeChecklist",
+        "content": "💰 Finance Onboarding Checklist\n\nBefore Start:\n✅ Complete background check\n✅ Sign offer letter\n\nFirst Day:\n✅ Financial systems access ([YOUR_FINANCE_SYSTEMS]: ERP, expense tools, etc.)\n✅ Meet finance leadership\n✅ Review accounting policies\n✅ Access financial reports\n\nFirst Week:\n✅ Systems training\n✅ Compliance training\n✅ Review financial controls\n✅ Meet cross-functional partners\n\nFirst Month:\n✅ Complete month-end close process\n✅ Attend finance team meetings\n✅ Review audit procedures\n✅ Understand reporting requirements\n\nYour manager will provide detailed procedures and timelines.",
+        "note": "CUSTOMIZE THIS CHECKLIST FOR YOUR FINANCE ONBOARDING PROCESS"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "hrChecklist",
+        "content": "👥 Human Resources Onboarding Checklist\n\nBefore Start:\n✅ Complete background check\n✅ Sign offer letter\n\nFirst Day:\n✅ [YOUR_HRIS_SYSTEM] access (Workday, BambooHR, etc.)\n✅ Meet HR leadership\n✅ Review HR policies and procedures\n✅ Access employee files\n\nFirst Week:\n✅ Benefits administration training\n✅ Compliance training (EEOC, FMLA, etc.)\n✅ HRIS system deep dive\n✅ Employee relations procedures\n\nFirst Month:\n✅ Shadow employee onboarding\n✅ Attend HR team meeting\n✅ Review compensation guidelines\n✅ Complete HR certification orientation\n\nYour manager will assign a mentor and provide process documentation.",
+        "note": "CUSTOMIZE THIS CHECKLIST FOR YOUR HR ONBOARDING PROCESS"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "operationsChecklist",
+        "content": "⚙️ Operations Onboarding Checklist\n\nBefore Start:\n✅ Complete background check\n✅ Sign offer letter\n\nFirst Day:\n✅ Operations systems access\n✅ Meet operations leadership\n✅ Review operational procedures\n✅ Facility tour\n\nFirst Week:\n✅ Process documentation review\n✅ Supply chain training\n✅ Quality management systems\n✅ Safety training\n\nFirst Month:\n✅ Lead first process improvement\n✅ Attend operations planning\n✅ Cross-functional collaboration\n✅ KPI dashboard review\n\nYour manager will provide detailed SOPs and training schedule.",
+        "note": "CUSTOMIZE THIS CHECKLIST FOR YOUR OPERATIONS ONBOARDING PROCESS"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "supportChecklist",
+        "content": "🎧 Customer Support Onboarding Checklist\n\nBefore Start:\n✅ Complete background check\n✅ Sign offer letter\n\nFirst Day:\n✅ [YOUR_SUPPORT_TOOLS] access (Zendesk, Intercom, etc.)\n✅ Meet support leadership\n✅ Review support processes\n✅ Customer service training\n\nFirst Week:\n✅ Product knowledge certification\n✅ Ticketing system training\n✅ Shadow experienced support reps\n✅ Knowledge base familiarization\n\nFirst Month:\n✅ Handle first solo tickets\n✅ Attend team meetings\n✅ Quality assurance review\n✅ Customer feedback analysis\n\nYour manager will provide support scripts and escalation procedures.",
+        "note": "CUSTOMIZE THIS CHECKLIST FOR YOUR SUPPORT ONBOARDING PROCESS"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "generalChecklist",
+        "content": "📋 General Onboarding Checklist\n\nYour manager will provide a department-specific checklist, but here are universal steps:\n\n✅ Complete background check\n✅ Sign offer letter\n✅ Attend company orientation (Day 1)\n✅ Complete IT security training\n✅ Set up benefits enrollment\n✅ Meet your manager and team\n✅ Review employee handbook\n\nYour HR representative will reach out with more details specific to your role and department.",
+        "note": "DEFAULT CHECKLIST FOR DEPARTMENTS NOT LISTED"
+      },
+
+      {
+        "nodeType": "action",
+        "nodeId": "sendHREmail",
+        "actionType": "SendEmail",
+        "configuration": {
+          "to": "[YOUR_HR_ONBOARDING_EMAIL]",
+          "subject": "New Employee Onboarding - {EmployeeName} - Start Date {StartDate}",
+          "body": "New Employee Onboarding Request\n\nEmployee Information:\n- Full Name: {EmployeeName}\n- Department: {Department}\n- Job Title: {JobTitle}\n- Start Date: {StartDate}\n\nEquipment Requested:\n{Equipment}\n\nPlease prepare onboarding materials and schedule orientation.\n\nThis request was submitted via the Employee Onboarding Agent.\nGenerated: {Conversation.StartTime}",
+          "usesVariables": ["EmployeeName", "Department", "JobTitle", "StartDate", "Equipment"],
+          "importance": "High",
+          "note": "REPLACE [YOUR_HR_ONBOARDING_EMAIL] WITH YOUR ACTUAL HR EMAIL"
+        }
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "confirmation",
+        "content": "All set, {EmployeeName}! 🎉\n\nI've sent your information to HR, and they'll reach out before your start date to coordinate:\n- Equipment delivery/pickup\n- Orientation schedule\n- First-day details\n\nYou'll receive a welcome email within 24 hours with:\n- Building access instructions\n- Parking information\n- First-day agenda\n- Who to ask for when you arrive\n\nWe're excited to have you join the {Department} team!\n\nIf you have any questions before your start date, feel free to reach out to [YOUR_HR_EMAIL].\n\nWelcome aboard! 👋",
+        "usesVariables": ["EmployeeName", "Department"],
+        "note": "REPLACE [YOUR_HR_EMAIL] WITH YOUR ACTUAL HR CONTACT EMAIL"
+      },
+
+      {
+        "nodeType": "question",
+        "nodeId": "satisfactionSurvey",
+        "questionText": "Was this onboarding process helpful?",
+        "entityType": "MultipleChoice",
+        "variableName": "SatisfactionRating",
+        "required": false,
+        "options": [
+          {
+            "value": "Yes",
+            "displayText": "👍 Yes, very helpful"
+          },
+          {
+            "value": "Somewhat",
+            "displayText": "🤔 Somewhat helpful"
+          },
+          {
+            "value": "No",
+            "displayText": "👎 Not helpful"
+          }
+        ],
+        "note": "OPTIONAL: COLLECT FEEDBACK FOR CONTINUOUS IMPROVEMENT"
+      },
+
+      {
+        "nodeType": "message",
+        "nodeId": "thankYou",
+        "content": "Thank you for your feedback! We're always working to improve the onboarding experience."
+      }
+    ]
+  },
+
+  "variableManagement": {
+    "description": "Variables are used to store information collected during the conversation",
+    "variables": [
+      {
+        "name": "EmployeeName",
+        "type": "PersonName",
+        "scope": "Topic",
+        "usage": "Stores employee's full name for personalization and HR notification"
+      },
+      {
+        "name": "Department",
+        "type": "Text",
+        "scope": "Topic",
+        "usage": "Determines which checklist to display and includes in HR notification"
+      },
+      {
+        "name": "JobTitle",
+        "type": "Text",
+        "scope": "Topic",
+        "usage": "Stores job title for HR notification"
+      },
+      {
+        "name": "StartDate",
+        "type": "Date",
+        "scope": "Topic",
+        "usage": "Stores official start date for HR coordination"
+      },
+      {
+        "name": "Equipment",
+        "type": "Text",
+        "scope": "Topic",
+        "usage": "Comma-separated list of equipment selections for IT preparation"
+      },
+      {
+        "name": "SatisfactionRating",
+        "type": "Text",
+        "scope": "Topic",
+        "usage": "Optional feedback for analytics and improvement"
+      }
+    ],
+    "variableSyntax": "Use {VariableName} in message text to insert variable value",
+    "variableClearing": "Variables are cleared when conversation ends"
+  },
+
+  "customizationGuide": {
+    "step1_searchPlaceholders": "Find all [YOUR_...] placeholders in this file",
+    "step2_companyInfo": "Replace [YOUR_COMPANY_NAME], [YOUR_HR_EMAIL], etc. with actual values",
+    "step3_departments": "Add, remove, or modify departments in collectDepartment node",
+    "step4_checklists": "Customize each department checklist with your actual onboarding steps",
+    "step5_equipment": "Update equipment options to match what your company provides",
+    "step6_emailConfig": "Configure email action with correct recipient and email server settings",
+    "step7_testing": "Test thoroughly with different departments and equipment combinations",
+    "step8_analytics": "Monitor satisfaction ratings and conversation completion rates"
+  },
+
+  "testingChecklist": [
+    "Test with each department to verify correct checklist displays",
+    "Test multi-select equipment (select 0, 1, 3+ items)",
+    "Verify all variables populate correctly in email",
+    "Test date input in various formats (MM/DD/YYYY, natural language)",
+    "Confirm email delivery to HR inbox",
+    "Test conversation abandonment and restart",
+    "Verify satisfaction survey appears and records responses",
+    "Check that no {VariableName} placeholders remain unreplaced"
+  ],
+
+  "bestPractices": {
+    "conversationDesign": [
+      "Keep questions clear and concise",
+      "Show progress (e.g., 'Next, let's talk about...')",
+      "Confirm collected information with summaries",
+      "Use emojis sparingly for visual interest",
+      "Personalize responses using employee name"
+    ],
+    "dataQuality": [
+      "Use multiple choice for critical branching variables (Department)",
+      "Use free text only when options are too numerous (JobTitle)",
+      "Use entity types for validation (Date, PersonName)",
+      "Provide example responses for free text questions"
+    ],
+    "maintenance": [
+      "Review and update checklists quarterly",
+      "Monitor conversation abandonment rates",
+      "Analyze satisfaction survey results",
+      "Update trigger phrases based on actual user queries",
+      "Keep equipment options current with IT offerings"
+    ]
+  }
+}

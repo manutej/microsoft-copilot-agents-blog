@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2024-12-18",
+    "description": "Enterprise Arc diagram prompts for Microsoft Copilot Agents Blog Series (Blogs 7-9)",
+    "model": "gemini-3-pro-image-preview",
+    "color_scheme": "Microsoft Copilot Blue (#0078D4)",
+    "total_diagrams": 9
+  },
+  "diagrams": [
+    {
+      "diagram_id": "B7-D1",
+      "diagram_name": "Security Layers Architecture",
+      "blog_number": 7,
+      "priority": "high",
+      "filename": "blog07-security-layers-architecture.png",
+      "dimensions": "1200x900",
+      "prompt": "Create a professional layered architecture diagram showing four security layers stacked vertically from bottom to top. LAYER 1 (FOUNDATION - Bottom): 'Authentication & Identity' with lock icon, showing Microsoft Entra ID, Single Sign-On SSO, Multi-Factor Authentication MFA, and Conditional Access Policies. LAYER 2: 'Role-Based Access Control RBAC' with key icon, showing Azure AD Security Groups (HR, Finance, Managers), Topic-Level Permissions, Attribute-Based Control, and Least Privilege Principle. LAYER 3: 'Data Loss Prevention DLP' with warning icon, showing Content Filtering (PII, SSN, Credit Cards), Connector Classification, Sensitive Information Detection (Microsoft Purview), and Policy Enforcement. LAYER 4 (TOP): 'Governance & Monitoring' with shield icon, showing Audit Logging (365-day retention), Security Monitoring & Alerts, Compliance Reporting (GDPR, HIPAA, SOC 2), and Production Deployment Checklist. Each layer should be a distinct container with rounded corners, drop shadows, and blue gradient backgrounds. Arrows flow upward from user access at bottom through all layers. Use Microsoft Copilot Blue borders and professional enterprise styling. Include 'USER ACCESS' element at the bottom with dashed border. Background: light gray. All text must be crisp and readable. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B7-D2",
+      "diagram_name": "RBAC Model",
+      "blog_number": 7,
+      "priority": "high",
+      "filename": "blog07-rbac-model.png",
+      "dimensions": "1200x800",
+      "prompt": "Create a flowchart showing Role-Based Access Control. Start at top with 'USER ATTEMPTS ACCESS' flowing down to 'MICROSOFT ENTRA ID (Authentication)' box with lock icon. Below that, show 'User Identity' box listing Email, Department, Job Title, Security Groups. This branches into 4 paths: HR Team, Finance Team, Managers Only, and None (Public). Each branch leads to colored topic boxes below: HR TOPICS (green) showing Payroll, Benefits, Records with checkmark; FINANCE TOPICS (blue) showing Budget, Expense, Reports with checkmark; MANAGER TOPICS (orange) showing Team Perf, Approve with checkmark; PUBLIC TOPICS (gray) showing FAQ, News, IT Tkt with checkmark. At bottom, show 'UNAUTHORIZED ACCESS' red error box with message: 'This information is restricted to HR team. To request access: Contact IT admin, Email: hr@company.com'. Use Microsoft Copilot Blue for main flow arrows, color-coded boxes for different access levels, white background. Professional enterprise styling with drop shadows. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B7-D3",
+      "diagram_name": "DLP Policy Flow",
+      "blog_number": 7,
+      "priority": "high",
+      "filename": "blog07-dlp-policy-flow.png",
+      "dimensions": "1000x900",
+      "prompt": "Create a process flow diagram for Data Loss Prevention. Start at top with 'USER INPUT / AGENT RESPONSE / KNOWLEDGE SOURCE' flowing to 'CONTENT ANALYSIS (Real-Time) Microsoft Purview DLP Engine' box. Below that, 'PATTERN DETECTION' box with checkmarks for: Credit Card Numbers (16 digits), Social Security Numbers (XXX-XX), IBAN (Bank Accounts), Medical Record Numbers, IP Addresses (Internal Network). Decision diamond 'MATCH FOUND?' with YES path going left and NO path going right to 'ALLOW CONTENT'. YES path leads to 'DLP POLICY ACTION' which branches into 4 actions: BLOCK (red, stop sign emoji), WARN (orange, warning emoji), REDACT (blue, asterisks ***), AUDIT (gray, notepad emoji). Below actions, show large 'ENFORCEMENT OUTCOMES' box with 4 sections detailing each action: BLOCK (User message stopped, Error Cannot share SSN, Incident logged), WARN (User notified of policy, Content delivered with warning, Compliance team alerted), REDACT (Sensitive data masked ***-**-****, Content delivered safely, Audit entry created), AUDIT (Full content logged, No blocking monitor mode, Compliance review queue). At bottom: 'AUDIT LOG → COMPLIANCE REPORTING (365-day retention, SOC 2/HIPAA/GDPR)'. Use color-coded action boxes, blue flow arrows, light gray background. Professional styling. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B7-D4",
+      "diagram_name": "Audit Logging Architecture",
+      "blog_number": 7,
+      "priority": "medium",
+      "filename": "blog07-audit-logging-architecture.png",
+      "dimensions": "1200x700",
+      "prompt": "Create a three-tier architecture diagram. TOP TIER: Three source boxes (250x100px each): 'Conversations' (User inputs, Responses, Topic flows), 'Authentication' (Login events, MFA checks, Access deny), 'Admin Changes' (Topic edits, Settings, Publishing). Arrows converge to 'LOGGING DESTINATIONS'. MIDDLE TIER (prominent): Three large storage boxes: 'DATAVERSE' (green, chart icon, Retention 30-365 days, Contains: Full transcripts, User IDs, Timestamps, Use For: Analytics, Quality, Short-term), 'AZURE MONITOR' (blue, chart icon, Retention 90+ days, Contains: Performance metrics, Error logs, KQL queries, Use For: Monitoring, Alerting, Advanced), 'M365 PURVIEW' (orange, shield icon, Retention 90-365 days, Contains: All M365 activities, User access, Compliance, Use For: Audits, Legal hold, Regulatory). BOTTOM TIER: Three use case boxes: 'SECURITY MONITORING' (Real-time alerts for Unauth access, Excessive errors, Unusual activity), 'COMPLIANCE REPORTING' (Quarterly reports for HIPAA accounting, GDPR DSR, SOC 2 evidence, Audit trails), 'BUSINESS ANALYTICS' (Usage trends: Volume by channel, CSAT trends, Topic performance). Use fan-out arrows from top to middle (blue), middle to bottom (gray). Middle tier has heaviest borders and drop shadows. White background. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B8-D1",
+      "diagram_name": "Compliance Framework Comparison",
+      "blog_number": 8,
+      "priority": "high",
+      "filename": "blog08-compliance-framework-comparison.png",
+      "dimensions": "1400x900",
+      "prompt": "Create a professional comparison table for GDPR, HIPAA, and SOC 2 compliance frameworks. Header row (blue background): CRITERIA column, GDPR 🇪🇺 (European), HIPAA 🏥 (Healthcare), SOC 2 🏢 (Enterprise). Rows: WHO NEEDS IT? (GDPR: Any org processing EU citizen data, B2C HR CRM; HIPAA: Healthcare providers, Health plans, Clearinghouses, Business associates; SOC 2: SaaS companies, Service providers, B2B sellers). MAX PENALTIES (GDPR: €20M or 4% global revenue whichever higher 🔴; HIPAA: $1.5M per violation type per year 🔴; SOC 2: No fines but customer trust loss ⚠️). KEY REQUIREMENTS (GDPR: Lawful basis Art 6, Data minimization, Right to erasure, DPIA if high risk; HIPAA: PHI safeguards, BAA with Microsoft, Minimum necessary standard, Patient rights; SOC 2: Security CC6, Availability A1, Processing integrity, Confidentiality, Privacy P3). COPILOT AGENT IMPLEMENTATION (all with green checkmarks: GDPR - Entra ID authentication, Data retention 365 days, User consent, Privacy policy, Audit logs, DSR process; HIPAA - Entra ID authentication, Encryption transit & rest, RBAC for PHI doctors vs billing, BAA signed, Audit logs 365 days, DLP for PHI; SOC 2 - Entra ID authentication, RBAC, DLP policies, Audit logging 365 days, Monitoring & alerts, Change mgmt). AUDIT REQUIREMENTS and MICROSOFT COPILOT STUDIO COVERAGE rows. Use 8px colored left borders: GDPR green, HIPAA blue, SOC 2 orange. Alternating white and light gray row backgrounds. Professional table styling with rounded corners, drop shadows. Light gray canvas background. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B8-D2",
+      "diagram_name": "Security Governance Model",
+      "blog_number": 8,
+      "priority": "high",
+      "filename": "blog08-security-governance-model.png",
+      "dimensions": "1200x1000",
+      "prompt": "Create a hierarchical governance flow diagram. TOP: 'EXECUTIVE SPONSOR (CIO/CTO) FINAL APPROVAL' box with briefcase emoji, large blue border, light blue gradient background, prominent shadow. This branches into three APPROVAL TIER boxes: 'BUSINESS OWNER' (green border, ✓ Validate business needs, ROI justif, UAT sign-off), 'IT SECURITY' (green border, ✓ Validate security controls, Auth & RBAC, DLP policies), 'COMPLIANCE OFFICER' (green border, ✓ Validate GDPR HIPAA SOC 2, Data privacy, Retention). Arrows converge to 'PRODUCTION CHECKLIST (All Gates Must Pass)' orange dashed box. This splits into three gate boxes: '1. SECURITY & AUTH ✅' (Entra ID enabled, RBAC configured, DLP policies, Solution checker passed), '2. QUALITY ASSURANCE ✅' (Manual testing 20+ cases, UAT completed, Regression passed, Quality ≥80/100), '3. OPERATIONS READINESS ✅' (Monitoring configured, On-call assigned, Backup/DR documented, Rollback plan ready, Metrics defined). Gates converge to 'ALL APPROVALS OBTAINED' green box listing all approvers with checkmarks. Final arrow to 'PRODUCTION DEPLOYMENT APPROVED' large green gradient box with rocket emoji and glow effect. Bottom: 'POST-DEPLOYMENT GOVERNANCE' gray box (Monthly Analytics review, Quarterly Compliance audit, Quarterly Access review, Annually Full agent review). Use blue and green arrows, professional enterprise styling. White background. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B9-D1",
+      "diagram_name": "Multi-Channel Deployment Architecture",
+      "blog_number": 9,
+      "priority": "high",
+      "filename": "blog09-multi-channel-deployment.png",
+      "dimensions": "1400x900",
+      "prompt": "Create a multi-channel architecture diagram showing one Copilot Agent deployed to three channels. CENTER: Large 'COPILOT AGENT' box (blue) with internal components: Topics & Flows, Knowledge Sources (SharePoint, Dataverse), Power Automate Flows, AI Builder Models. Three deployment paths branch out: LEFT PATH - 'MICROSOFT TEAMS' (Teams icon, Internal employees 5000 users, Features: Adaptive Cards, Proactive Messages, Message Extensions, SSO Authentication, 5000 conversations/month, $37,500 value). CENTER PATH - 'WEBSITE EMBED' (Globe icon, Customers 50,000 users, Features: iframe/JavaScript Widget, Public or Authenticated, Lead Capture CRM, Multilingual Support, 15,000 conversations/month, $112,500 value). RIGHT PATH - 'MOBILE (Power Apps)' (Phone icon, Field employees 2000 users, Features: Power Apps Mobile, Push Notifications, Voice Input/Output, Offline Limited, 5000 conversations/month, $37,500 value). Each channel shows authentication method: Teams (Microsoft Entra ID automatic), Website (OAuth or None), Mobile (Microsoft Entra ID automatic). Bottom: 'UNIFIED ANALYTICS DASHBOARD' bar showing aggregated metrics: 25,000 total conversations/month, $187,500 total value, 5x ROI vs single channel. Use Microsoft Copilot Blue for agent core, distinct colors for each channel (Teams blue, Website green, Mobile orange). Professional enterprise styling with icons, arrows showing deployment flow. White background. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B9-D2",
+      "diagram_name": "Authentication Matrix by Channel",
+      "blog_number": 9,
+      "priority": "medium",
+      "filename": "blog09-authentication-matrix.png",
+      "dimensions": "1200x700",
+      "prompt": "Create a professional authentication comparison matrix table. Header row: CHANNEL, AUTHENTICATION METHOD, USER TYPE, DATA ACCESS, USE CASES. Row 1 - MICROSOFT TEAMS: Microsoft Entra ID (Automatic SSO), Internal Employees, FULL (Sensitive data, PII, Internal systems), HR queries, IT support, Approvals, Internal productivity. Row 2 - WEBSITE (Public): None (Anonymous), External Customers/Public, LIMITED (Public documentation only, No PII, No internal data), Product FAQ, Support troubleshooting, Lead capture, General information. Row 3 - WEBSITE (Authenticated): OAuth 2.0 (Microsoft/Google/Facebook), Registered Customers, MEDIUM (User-specific data, Order history, Account settings), Order status, Account management, Personalized recommendations, Authenticated actions. Row 4 - MOBILE (Power Apps): Microsoft Entra ID (Automatic SSO), Internal Field Employees, FULL (Same as Teams, Mobile-optimized), Field service, On-the-go access, Mobile workflows, Push notifications. Use color coding: Green checkmarks for FULL access, Orange warning for LIMITED, Blue info for MEDIUM. Add security icons: lock for authenticated, open lock for public. Professional table styling with alternating row backgrounds (white and light gray), blue header, rounded corners. Include legend at bottom: 🔒 Full Access (Internal only), 🔓 Limited Access (Public safe), 🔐 Medium Access (Authenticated customers). Light gray canvas background. Font: Segoe UI."
+    },
+    {
+      "diagram_id": "B9-D3",
+      "diagram_name": "Channel Comparison Decision Tree",
+      "blog_number": 9,
+      "priority": "medium",
+      "filename": "blog09-channel-decision-tree.png",
+      "dimensions": "1000x800",
+      "prompt": "Create a decision tree flowchart for channel selection. Start at top with diamond 'WHO IS PRIMARY AUDIENCE?'. Branch left to 'Employees' and right to 'Customers'. Employees path leads to 'MICROSOFT TEAMS' box (blue, Teams icon, Features: Automatic authentication, Rich adaptive cards, Proactive messaging, Message extensions, Deployment: Minutes via share link, Best for: Internal productivity, HR, IT support). Below Teams: diamond 'Do they need mobile access?'. YES leads to 'ADD POWER APPS MOBILE' box (orange, phone icon, Additional features: Push notifications, Voice input, Offline support, Mobile-optimized UX). NO leads to 'Teams only deployment'. Customers path leads to 'WEBSITE EMBED' box (green, globe icon, Features: Public or authenticated, Lead capture & CRM, Multilingual support, 24/7 self-service, Deployment: Hours via embed code, Best for: Customer support, Sales, Product info). Below Website: diamond 'Need mobile app?'. YES leads to 'ADD MOBILE-OPTIMIZED WEB' box (Additional features: Responsive design, Touch-friendly, Simplified flows). At bottom, show 'MULTI-CHANNEL DEPLOYMENT' box (purple gradient, Best practice: Start with Teams (internal), then Website (customers), then Mobile (field teams), Phased approach: 2 weeks between phases, Learn and optimize each channel). Use color-coded paths, professional decision diamonds, clear directional arrows. White background. Font: Segoe UI."
+    }
+  ]
+}

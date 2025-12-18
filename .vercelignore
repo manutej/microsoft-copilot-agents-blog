@@ -1,0 +1,26 @@
+# Vercel Ignore - Exclude unnecessary files
+# This file defines what NOT to upload to Vercel
+
+# Documentation
+*.md
+!blog-site/README.md
+
+# Python scripts
+*.py
+
+# Large generated directories
+diagrams/
+validation/
+research/
+templates/
+outlines/
+scripts/
+
+# Exclude build artifacts from blog-site
+blog-site/.next/
+blog-site/out/
+blog-site/node_modules/
+
+# Temporary/copied content (will be copied during prebuild)
+blog-site/content/
+blog-site/public/images/
