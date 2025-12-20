@@ -2,59 +2,85 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Microsoft Copilot Blue Colors */
-  --color-copilot-blue-50: #E3F2FD;
-  --color-copilot-blue-100: #BBDEFB;
-  --color-copilot-blue-300: #64B5F6;
-  --color-copilot-blue-500: #0078D4;
-  --color-copilot-blue-700: #005A9E;
-  --color-copilot-blue-900: #003D6B;
+  /* LibreUIUX Design Tokens - Slate-based neutral palette */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
 
-  /* Copilot Gray Colors */
-  --color-copilot-gray-50: #F8F9FA;
-  --color-copilot-gray-100: #E9ECEF;
-  --color-copilot-gray-200: #DEE2E6;
-  --color-copilot-gray-600: #6C757D;
-  --color-copilot-gray-900: #212529;
+  /* Copilot Blue Accent (subtle, 1px borders only) */
+  --color-accent-500: #0078D4;
+  --color-accent-600: #005A9E;
+  --color-accent-700: #003D6B;
+
+  /* Semantic Colors */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-bg-primary: white;
+  --color-bg-secondary: var(--color-neutral-50);
+  --color-border-subtle: var(--color-neutral-200);
+
+  /* Dark Mode */
+  --color-text-primary-dark: var(--color-neutral-100);
+  --color-text-secondary-dark: var(--color-neutral-300);
+  --color-bg-primary-dark: var(--color-neutral-950);
+  --color-bg-secondary-dark: var(--color-neutral-900);
+  --color-border-subtle-dark: var(--color-neutral-800);
 }
 
 @layer base {
   body {
-    background-color: white;
-    color: var(--color-copilot-gray-900);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: 'Inter Variable', system-ui, -apple-system, sans-serif;
   }
 
   .dark body {
-    background-color: var(--color-copilot-gray-900);
-    color: var(--color-copilot-gray-100);
+    background-color: var(--color-bg-primary-dark);
+    color: var(--color-text-primary-dark);
   }
 }
 
 @layer components {
+  /* LibreUIUX Principle: Subtle borders over gradients */
+  /* Dieter Rams: Less but better */
+
   .btn-primary {
-    background-color: var(--color-copilot-blue-500);
+    background-color: var(--color-accent-500);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
-    transition: background-color 0.2s;
+    border: 1px solid var(--color-accent-600);
+    transition: all 0.2s ease-out;
   }
 
   .btn-primary:hover {
-    background-color: var(--color-copilot-blue-700);
+    background-color: var(--color-accent-600);
+    border-color: var(--color-accent-700);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   }
 
   .btn-secondary {
-    border: 2px solid var(--color-copilot-blue-500);
-    color: var(--color-copilot-blue-500);
+    border: 1px solid var(--color-accent-500);
+    color: var(--color-accent-500);
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
-    transition: all 0.2s;
+    background-color: transparent;
+    transition: all 0.2s ease-out;
   }
 
   .btn-secondary:hover {
-    background-color: var(--color-copilot-blue-500);
+    background-color: var(--color-accent-500);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   }
 }
